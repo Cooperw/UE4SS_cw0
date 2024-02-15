@@ -19,7 +19,9 @@ echo Deleting existing files...
 del /s /q UE4SS*
 del /s /q README*
 del /s /q dwmapi*
+del /s /q xinput*
 del /s /q Changelog*
+del /s /q crash*
 del /s /q Mods\mods.txt
 rmdir /s /q Mods\ActorDumperMod
 rmdir /s /q Mods\BPModLoaderMod
@@ -35,17 +37,18 @@ rmdir /s /q Mods\SplitScreenMod
 
 rem Download the new zip file
 echo Downloading new zip file...
-powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Cooperw/UE4SS_cw0/releases/download/UE4SS_v3.0.0/UE4SS_v3_0_0_cw0.zip', 'UE4SS_v3_0_0.zip')"
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/Cooperw/UE4SS_cw0/releases/download/UE4SS_v3.0.1/UE4SS_3_0_1.zip', 'UE4SS_3_0_1.zip')"
 
 rem Unzip the downloaded file
 echo Unzipping new file...
-powershell Expand-Archive -Path UE4SS_v3_0_0.zip -DestinationPath .
+powershell Expand-Archive -Path UE4SS_3_0_1.zip -DestinationPath .
 
 rem Clean up temporary files
 echo Cleaning up...
-del /q UE4SS_v3_0_0.zip
+del /q UE4SS_3_0_1.zip
 
 
+del /s /q FixInstall*
 echo Process completed successfully.
 echo Press any key to continue...
 pause > nul
